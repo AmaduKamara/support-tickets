@@ -1,0 +1,30 @@
+{
+  "name": "support-tickets",
+  "version": "1.0.0",
+  "description": "MERN Support Ticket system for giving notes and tickets about products bought",
+  "main": "server.js",
+  "scripts": {
+    "start": "node backend/server.js",
+    "server": "nodemon backend/server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AmaduKamara/support-tickets.git"
+  },
+  "author": "Amadu Kamara (Amkam)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/AmaduKamara/support-tickets/issues"
+  },
+  "homepage": "https://github.com/AmaduKamara/support-tickets#readme",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "colors": "^1.4.0",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "mongoose": "^6.7.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.20"
+  }
+}
