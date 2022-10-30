@@ -18,7 +18,7 @@ const registerUser = asyncHandler(async (req, res) => {
     throw new Error("Please include all fields");
   }
 
-  // 3. Find if user already exist
+  // 3. Find and check if user already exist
   const userExist = await User.findOne({ email });
   if (userExist) {
     res.status(400);
@@ -32,6 +32,7 @@ const registerUser = asyncHandler(async (req, res) => {
   // 5. Create user
   const user = await User.create({ name, email, password: hashedPassword });
 
+  // Return data for created user to be used later or throw an error
   if (user) {
     res.status(201).json({
       _id: user._id,
@@ -49,13 +50,13 @@ const registerUser = asyncHandler(async (req, res) => {
 // @Route   /api/users/login
 // @Access  Public
 const loginUser = asyncHandler(async (req, res) => {
-  // 1. destructure the user data credentials the req body
+  // 1. destructure the user credentials from the req body
   const { email, password } = req.body;
 
   // 2. Find user by email
   const user = await User.findOne({ email });
 
-  // Check if password matches
+  // Check if password matches and return user data an the token for the user
   if (user && (await bcrypt.compare(password, user.password))) {
     res.status(200).json({
       _id: user._id,
