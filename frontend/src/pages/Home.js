@@ -5,10 +5,10 @@ const Home = () => {
   return (
     <div className="container mx-auto py-16 flex justify-center w-1/2">
       <section className="px-16 w-full text-center">
-        <h1 className="text-5xl font-bold text-gray-600">
+        <h1 className="md:text-3xl lg:text-5xl font-bold text-gray-600">
           What do you need help with?
         </h1>
-        <p className="text-gray-700 mt-5 text-xl">
+        <p className="text-gray-700 mt-5 md:text-xl">
           Please choose from the options below
         </p>
         <div className="mt-10">
