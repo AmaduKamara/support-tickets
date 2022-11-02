@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import { FaSignInAlt } from "react-icons/fa";
+import { useSelector, useDispatch } from "react-redux";
+import { login } from "../features/auth/authSlice";
 
 const Login = () => {
   const [formData, setFormData] = useState({
@@ -8,6 +10,11 @@ const Login = () => {
   });
 
   const { email, password } = formData;
+  const dispatch = useDispatch();
+
+  const { user, isSuccess, isLoading, isError, message } = useSelector(
+    (state) => state.auth
+  );
 
   const onChange = (e) => {
     setFormData((prevState) => ({
@@ -18,16 +25,21 @@ const Login = () => {
 
   const onSubmit = (e) => {
     e.preventDefault();
+    const userData = {
+      email,
+      password,
+    };
+    dispatch(login(userData));
   };
 
   return (
     <div className="container mx-auto py-16 flex justify-center md:w-4/5 lg:w-1/2">
       <section className="px-16 w-full md:w-4/5">
         <div className="text-center">
-          <h1 className="flex items-center justify-center text-4xl font-bold text-gray-600">
+          <h1 className="flex items-center justify-center text-2xl md:text-4xl font-bold text-gray-600">
             <FaSignInAlt className="mr-2 text-gray-500" /> Login
           </h1>
-          <p className="text-2xl mt-5 font-bold text-gray-400">
+          <p className="text-lg md:text-2xl mt-5 font-bold text-gray-400">
             Please create an account
           </p>
         </div>
