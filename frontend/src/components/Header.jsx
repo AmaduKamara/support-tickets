@@ -4,15 +4,15 @@ import { Link } from "react-router-dom";
 const Header = () => {
   return (
     <header className="w-full shadow-md py-5">
-      <div className="container mx-auto flex justify-between items-center">
+      <div className="px-4 md:container md:mx-auto flex justify-between items-center">
         <div>
-          <Link to="/" className="text-xl font-semibold">
+          <Link to="/" className="text-sm md:text-xl font-semibold">
             Support<span className="text-cyan-600">Tickets</span>
           </Link>
         </div>
         <nav>
           <ul className="flex items-center">
-            <li className="mr-5 text-sm">
+            <li className="mr-5 md:text-sm">
               <Link
                 to="/login"
                 className="flex items-center hover:text-cyan-600"
