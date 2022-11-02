@@ -21,8 +21,8 @@ const Login = () => {
   };
 
   return (
-    <div className="container mx-auto py-16 flex justify-center w-1/2">
-      <section className="px-16 w-3/4">
+    <div className="container mx-auto py-16 flex justify-center md:w-4/5 lg:w-1/2">
+      <section className="px-16 w-full md:w-4/5">
         <div className="text-center">
           <h1 className="flex items-center justify-center text-4xl font-bold text-gray-600">
             <FaSignInAlt className="mr-2 text-gray-500" /> Login
