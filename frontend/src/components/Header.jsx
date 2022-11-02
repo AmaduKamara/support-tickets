@@ -13,21 +13,24 @@ const Header = () => {
         <nav>
           <ul className="flex items-center">
             <li className="mr-5 text-sm">
-              <Link to="/login" className="flex items-center">
-                <FaSignInAlt className="mr-1 text-gray-500 hover:text-cyan-600" />{" "}
-                Login
+              <Link
+                to="/login"
+                className="flex items-center hover:text-cyan-600"
+              >
+                <FaSignInAlt className="mr-1 text-gray-500" /> Login
               </Link>
             </li>
             <li className=" text-sm">
-              <Link to="/register" className="flex items-center">
-                <FaUser className="mr-1 text-gray-500 hover:text-cyan-600" />{" "}
-                Register
+              <Link
+                to="/register"
+                className="flex items-center hover:text-cyan-600"
+              >
+                <FaUser className="mr-1 text-gray-500" /> Register
               </Link>
             </li>
             <li className=" text-sm ml-5">
-              <Link to="/" className="flex items-center">
-                <FaSignOutAlt className="mr-1 text-gray-500 hover:text-cyan-600" />{" "}
-                Logout
+              <Link to="/" className="flex items-center hover:text-cyan-600">
+                <FaSignOutAlt className="mr-1 text-gray-500" /> Logout
               </Link>
             </li>
           </ul>
