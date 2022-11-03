@@ -14,13 +14,13 @@ const Home = () => {
         <div className="mt-10">
           <Link
             to="/new-ticket"
-            className="py-3 rounded-md flex items-center justify-center bg-cyan-600 relative text-xl text-white hover:bg-cyan-700"
+            className="py-3 rounded-md flex items-center justify-center bg-cyan-600 relative md:text-xl text-white hover:bg-cyan-700"
           >
             <FaQuestionCircle className="mr-4" /> Create New Ticket
           </Link>
           <Link
             to="/tickets"
-            className="py-3 rounded-md mt-5 border border-cyan-500 flex items-center justify-center text-cyan-600 relative text-xl hover:text-white hover:bg-cyan-600"
+            className="py-3 rounded-md mt-5 border border-cyan-500 flex items-center justify-center text-cyan-600 relative md:text-xl hover:text-white hover:bg-cyan-600"
           >
             <FaTicketAlt className="mr-4" /> View Tickets
           </Link>
