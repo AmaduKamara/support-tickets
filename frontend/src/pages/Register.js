@@ -4,6 +4,7 @@ import { toast } from "react-toastify";
 import { useSelector, useDispatch } from "react-redux";
 import { register, reset } from "../features/auth/authSlice";
 import { useNavigate } from "react-router-dom";
+import Spinner from "../components/Spinner";
 
 const Register = () => {
   const [formData, setFormData] = useState({
@@ -21,6 +22,7 @@ const Register = () => {
     (state) => state.auth
   );
 
+  // Register the user by the useEffect method and dispatch the register action to the API
   useEffect(() => {
     if (isError) {
       toast.error(message);
@@ -54,6 +56,10 @@ const Register = () => {
       dispatch(register(userData));
     }
   };
+
+  if (isLoading) {
+    return <Spinner />;
+  }
 
   return (
     <div className="container mx-auto py-16 flex justify-center md:w-4/5 lg:w-1/2">
