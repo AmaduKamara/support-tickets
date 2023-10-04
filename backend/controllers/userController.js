@@ -86,7 +86,7 @@ const getMe = asyncHandler(async (req, res) => {
 // Generate a token for a user for when registered and loggedin
 const generateToken = (id) => {
   return jwt.sign({ id }, process.env.JWT_SECRET, {
-    expiresIn: "30d",
+    expiresIn: "7d",
   });
 };
 

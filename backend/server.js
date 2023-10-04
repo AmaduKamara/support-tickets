@@ -20,7 +20,7 @@ app.use(express.urlencoded({ extended: true }));
 
 app.get("/", (req, res) => {
   res
-    .status(201)
+    .status(200)
     .json({ message: "Welcome to the MERN Stack Support Tickets system" });
 });
 
