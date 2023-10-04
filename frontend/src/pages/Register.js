@@ -22,7 +22,7 @@ const Register = () => {
     (state) => state.auth
   );
 
-  // Register the user by the useEffect method and dispatch the register action to the API
+  // Register the user by using the useEffect method and dispatch the register action to the API
   useEffect(() => {
     if (isError) {
       toast.error(message);
