@@ -17,6 +17,7 @@ export const register = createAsyncThunk(
   "auth/register",
   async (user, thunkAPI) => {
     try {
+      // Make use of the register authService function for registering a user
       return await authService.register(user);
     } catch (error) {
       const message =
@@ -34,6 +35,7 @@ export const register = createAsyncThunk(
 // Login user
 export const login = createAsyncThunk("auth/login", async (user, thunkAPI) => {
   try {
+    // Make use of the login authService function for loging in a user
     return await authService.login(user);
   } catch (error) {
     const message =
