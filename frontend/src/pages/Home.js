@@ -22,7 +22,7 @@ const Home = () => {
             to="/tickets"
             className="py-3 rounded-md mt-5 border border-cyan-500 flex items-center justify-center text-cyan-600 relative md:text-xl hover:text-white hover:bg-cyan-600"
           >
-            <FaTicketAlt className="mr-4" /> View Tickets
+            <FaTicketAlt className="mr-4" /> View My Tickets
           </Link>
         </div>
       </section>
