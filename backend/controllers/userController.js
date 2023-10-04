@@ -56,7 +56,7 @@ const loginUser = asyncHandler(async (req, res) => {
   // 2. Find user by email
   const user = await User.findOne({ email });
 
-  // Check if password matches and return user data an the token for the user
+  // Check if there is a user and compare if password matches and return user data an the token for the user
   if (user && (await bcrypt.compare(password, user.password))) {
     res.status(200).json({
       _id: user._id,
@@ -74,7 +74,7 @@ const loginUser = asyncHandler(async (req, res) => {
 // @Route   /api/users/me
 // @Access  Private
 const getMe = asyncHandler(async (req, res) => {
-  // 1. Get the user by their id
+  // 1. Get user's data needed to be sent
   const user = {
     id: req.user._id,
     email: req.user.email,
