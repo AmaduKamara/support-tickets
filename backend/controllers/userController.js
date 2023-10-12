@@ -20,6 +20,7 @@ const registerUser = asyncHandler(async (req, res) => {
 
   // 3. Find and check if user already exist
   const userExist = await User.findOne({ email });
+
   if (userExist) {
     res.status(400);
     throw new Error("User already exists");
@@ -62,6 +63,7 @@ const loginUser = asyncHandler(async (req, res) => {
       _id: user._id,
       name: user.name,
       email: user.email,
+      isAdmin: user.isAdmin,
       token: generateToken(user._id), // generate a tokan and pass it to a user that's loggedin
     });
   } else {
@@ -79,6 +81,7 @@ const getMe = asyncHandler(async (req, res) => {
     id: req.user._id,
     email: req.user.email,
     name: req.user.name,
+    isAdmin: req.user.isAdmin,
   };
   res.status(200).json(user);
 });
