@@ -7,4 +7,5 @@ const errorHandler = (err, req, res, next) => {
   });
 };
 
+// Export and use it in server.js to capture errors and handle them
 module.exports = { errorHandler };
